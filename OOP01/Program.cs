@@ -65,6 +65,21 @@
             }
         }
         #endregion
+
+        #region Question6
+        //Create a struct called "Person" with properties "Name" and "Age".
+        //Write a C# program that takes details of 3 persons as input from the user and displays the name and age of the oldest person.
+        public struct PersonOldest
+        {
+            public string Name { get; set; }
+            public int Age { get; set; }
+            public PersonOldest(string name, int age)
+            {
+                this.Name = name;
+                this.Age = age;
+            }
+        }
+        #endregion
         public static void Main(string[] args)
         {
             #region Question1
@@ -150,6 +165,29 @@
             //the formula (i stole it, im not a math guy)
             double distance = Math.Sqrt(Math.Pow(p2.X - p1.X, 2) + Math.Pow(p2.Y - p1.Y, 2));
             Console.WriteLine($"The distance between the points ({p1.X}, {p1.Y}) and ({p2.X}, {p2.Y}) is {distance}");
+            #endregion
+
+            #region Question6
+            //Create a struct called "Person" with properties "Name" and "Age".
+            //Write a C# program that takes details of 3 persons as input from the user and displays the name and age of the oldest person.
+            PersonOldest[] persons = new PersonOldest[3];
+            for (int i = 0; i < persons.Length; i++)
+            {
+                Console.WriteLine($"Enter name for person {i + 1}: ");
+                string name = Console.ReadLine();
+                Console.WriteLine($"Enter age for person {i + 1}: ");
+                int age = Convert.ToInt32(Console.ReadLine());
+                persons[i] = new PersonOldest(name, age);
+            }
+            PersonOldest oldest = persons[0];
+            for (int i = 1; i < persons.Length; i++)
+            {
+                if (persons[i].Age > oldest.Age)
+                {
+                    oldest = persons[i];
+                }
+            }
+            Console.WriteLine($"The oldest person is {oldest.Name} with age {oldest.Age}.");
             #endregion
         }
     }
