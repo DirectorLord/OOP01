@@ -50,6 +50,21 @@
             red, green, blue
         }
         #endregion
+
+        #region Question5
+        //Create a struct called "Point" to represent a 2D point with properties "X" and "Y".
+        //Write a C# program that takes two points as input from the user and calculates the distance between them.
+        public struct Point
+        {
+            public double X { get; set; }
+            public double Y { get; set; }
+            public Point(double x, double y)
+            {
+                this.X = x;
+                this.Y = y;
+            }
+        }
+        #endregion
         public static void Main(string[] args)
         {
             #region Question1
@@ -116,6 +131,25 @@
                     Console.WriteLine($"{colorInput} is not a primary color.");
                     break;
             }
+            #endregion
+
+            #region Question5
+            //Create a struct called "Point" to represent a 2D point with properties "X" and "Y".
+            //Write a C# program that takes two points as input from the user and calculates the distance between them.
+            Console.WriteLine("Enter a point 1 for X: ");
+            double x1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter a point 1 for Y: ");
+            double y1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter X for Point 2:");
+            double x2 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter Y for Point 2:");
+            double y2 = Convert.ToDouble(Console.ReadLine());
+
+            Point p1 = new Point(x1, y1);
+            Point p2 = new Point(x2, y2);
+            //the formula (i stole it, im not a math guy)
+            double distance = Math.Sqrt(Math.Pow(p2.X - p1.X, 2) + Math.Pow(p2.Y - p1.Y, 2));
+            Console.WriteLine($"The distance between the points ({p1.X}, {p1.Y}) and ({p2.X}, {p2.Y}) is {distance}");
             #endregion
         }
     }
