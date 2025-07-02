@@ -32,6 +32,16 @@
             }
         }
         #endregion
+
+        #region Question3
+        //Create an enum called "Seas on" with the four seasons (Spring, Summer, Autumn, Winter) as its members.
+        //Write a C# program that takes a season name as input from the user and displays the corresponding month range for that season.
+        //Note range for seasons ( spring march to may , summer june to august , autumn September to November , winter December to February)
+        enum season
+        {
+            Spring, Summer, Autumn, Winter
+        }
+        #endregion
         public static void Main(string[] args)
         {
             #region Question1
@@ -53,6 +63,32 @@
             foreach (var person in people)
             {
                 Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
+            }
+            #endregion
+
+            #region Question3
+            //Create an enum called "Seas on" with the four seasons (Spring, Summer, Autumn, Winter) as its members.
+            //Write a C# program that takes a season name as input from the user and displays the corresponding month range for that season.
+            //Note range for seasons ( spring march to may , summer june to august , autumn September to November , winter December to February)
+            Console.WriteLine("Enter a season (Spring, Summer, Autumn, Winter) to know its range: ");
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "spring":
+                    Console.WriteLine("March to May");
+                    break;
+                case "summer":
+                    Console.WriteLine("June to August");
+                    break;
+                case "autumn":
+                    Console.WriteLine("September to November");
+                    break;
+                case "winter":
+                    Console.WriteLine("December to February");
+                    break;
+                default:
+                    Console.WriteLine("Invalid season");
+                    break;
             }
             #endregion
         }
